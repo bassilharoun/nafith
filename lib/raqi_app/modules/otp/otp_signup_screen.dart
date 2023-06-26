@@ -39,7 +39,7 @@ class OtpScreen extends StatelessWidget {
           }
         } ,
         builder:(context , state){
-          RaqiSignupCubit.get(context).verifyPhone(phone, email, name, gender, type,bio, context);
+          RaqiSignupCubit.get(context).verifyPhone(phone, email, name, gender, type,bio,RaqiCubit.get(context).myCountryName,RaqiCubit.get(context).myCountryCode, context);
           return Scaffold(
             appBar: AppBar(title: Text("${getLang(context,"otpV")}"),),
             body: SingleChildScrollView(
@@ -89,7 +89,9 @@ class OtpScreen extends StatelessWidget {
                                       uId: value.user!.uid,
                                       gender: gender,
                                       type: type,
-                                      bio: bio
+                                      bio: bio,
+                                      myCountryName: RaqiCubit.get(context).myCountryName,
+                                      myCountryCode: RaqiCubit.get(context).myCountryCode
                                   );
                                   uId = value.user!.uid;
                                   RaqiSignupCubit.get(context).signupSuccess();

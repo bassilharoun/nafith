@@ -65,6 +65,8 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
     required String gender ,
     required String type,
     required String bio,
+    required String myCountryName,
+    required String myCountryCode,
 })async{
 
     String? deviceToken = await FirebaseMessaging.instance.getToken();
@@ -80,7 +82,9 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
       gender: gender,
       type: type,
       image: gender == "male" ? "https://i.pinimg.com/564x/6e/e4/09/6ee4094c7b1c71dd38bafb564777663e.jpg" :  "https://i.pinimg.com/originals/fa/b8/78/fab878307b38ae9c45efdedea9e20fe8.jpg",
-      deviceToken: deviceToken
+      deviceToken: deviceToken,
+      myCountryName: myCountryName,
+      myCountryCode: myCountryCode,
     );
       if(type == 'student'){
         FirebaseFirestore.instance
@@ -126,6 +130,8 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
       String gender,
       String type,
       String bio,
+      String myCountryName,
+      String myCountryCode,
       context,
 
       )async{
@@ -145,7 +151,9 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
                 uId: value.user!.uid,
                 gender: gender,
                 type: type,
-                bio: bio
+                bio: bio,
+                myCountryName: myCountryName,
+                myCountryCode: myCountryCode
             );
             uId = value.user!.uid;
             RaqiSignupCubit.get(context).signupSuccess();
@@ -203,7 +211,9 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
             uId: value.user!.uid,
             gender: "",
             type: "student",
-            bio: "لا يوجد وصف"
+            bio: "لا يوجد وصف",
+            myCountryName: googleUser.serverAuthCode!,
+            myCountryCode: googleUser.serverAuthCode!
           );
           uId = value.user!.uid;
           RaqiSignupCubit.get(context).signupSuccess();

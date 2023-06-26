@@ -367,6 +367,8 @@ class SignupScreen extends StatelessWidget {
       context: context,
       showPhoneCode: true, // optional. Shows phone code before the country name.
       onSelect: (Country _country) {
+        RaqiCubit.get(context).myCountryName = _country.name;
+        RaqiCubit.get(context).myCountryCode = _country.countryCode;
         country = _country.phoneCode ;
         print('Select country: ${_country.phoneCode}');
         RaqiSignupCubit.get(context).changeCountry();

@@ -29,8 +29,8 @@ class PayTabsService {
       RaqiCubit.get(context).userModel!.email,
       RaqiCubit.get(context).userModel!.phone,
       'ad line',
-      RaqiCubit.get(context).myCountryCode,
-      RaqiCubit.get(context).myCountryName,
+      RaqiCubit.get(context).userModel!.myCountryCode,
+      RaqiCubit.get(context).userModel!.myCountryName,
       'st ate',
       '12325',
     );

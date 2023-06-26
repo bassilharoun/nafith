@@ -12,6 +12,7 @@ import 'package:raqi/raqi_app/shared/colors.dart';
 import 'package:raqi/raqi_app/shared/components/applocale.dart';
 import 'package:raqi/raqi_app/shared/components/components.dart';
 import '../resources/asset_images.dart';
+import 'dart:io' show Platform;
 
 class PaymentScreen extends StatefulWidget {
 
@@ -23,7 +24,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   final PaymentViewModel _viewModel = PaymentViewModel();
   var flag = 0;
   int pakka = 3 ;
-  double amount = 50 ;
+  double amount = 115 ;
   var couponController = TextEditingController();
 
   @override
@@ -342,7 +343,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       });
                     },
                   ),
-                  PaymentOption(
+                  if(Platform.isIOS)
+                    PaymentOption(
                     height: 70,
                     index: 1,
                     name: 'Apple Pay',

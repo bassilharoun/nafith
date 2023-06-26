@@ -12,6 +12,8 @@ class UserModel{
   dynamic language ;
   dynamic minutes ;
   dynamic deviceToken ;
+  dynamic myCountryName ;
+  dynamic myCountryCode ;
 
   UserModel({
     this.name,
@@ -27,6 +29,8 @@ class UserModel{
     this.language ,
     this.minutes ,
     this.deviceToken ,
+    this.myCountryName ,
+    this.myCountryCode ,
 });
 
   UserModel.fromJson(Map<String , dynamic>? json){
@@ -43,6 +47,8 @@ class UserModel{
     language = json['language'];
     minutes = json['minutes'];
     deviceToken = json['deviceToken'];
+    myCountryName = json['myCountryName'];
+    myCountryCode = json['myCountryCode'];
   }
 
   Map<String , dynamic> toMap(){
@@ -60,6 +66,8 @@ class UserModel{
       'language' : language,
       'minutes' : minutes,
       'deviceToken' : deviceToken,
+      'myCountryName' : myCountryName,
+      'myCountryCode' : myCountryCode,
     };
   }
 }
