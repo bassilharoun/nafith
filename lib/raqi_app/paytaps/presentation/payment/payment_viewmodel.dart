@@ -100,20 +100,29 @@ class PaymentViewModel {
 
 
             if (transactionDetails["isSuccess"]) {
-              if(transactionDetails["cartAmount"] == "15.00"){
+              if(transactionDetails["cartAmount"] == "23.00"){
                 minEarning = 20 + int.parse(RaqiCubit.get(context).userModel!.minutes);
                 FirebaseFirestore.instance.collection("students").doc(RaqiCubit.get(context).userModel!.uId).update({'minutes' : "$minEarning"});
                 showToast(text: "مبارك, تم شحن 20 دقيقة", state: ToastStates.SUCCESS);
               }
-              if(transactionDetails["cartAmount"] == "50.00"){
-                minEarning = 60 + int.parse(RaqiCubit.get(context).userModel!.minutes);
+              if(transactionDetails["cartAmount"] == "57.00"){
+                minEarning = 50 + int.parse(RaqiCubit.get(context).userModel!.minutes);
                 FirebaseFirestore.instance.collection("students").doc(RaqiCubit.get(context).userModel!.uId).update({'minutes' : "$minEarning"});
-                showToast(text: "مبارك, تم شحن 60 دقيقة", state: ToastStates.SUCCESS);
+                showToast(text: "مبارك, تم شحن 50 دقيقة", state: ToastStates.SUCCESS);
               }
-              if(transactionDetails["cartAmount"] == "100.00"){
-                minEarning = 120 + int.parse(RaqiCubit.get(context).userModel!.minutes);
+              if(transactionDetails["cartAmount"] == "115.00"){
+                minEarning = 100 + int.parse(RaqiCubit.get(context).userModel!.minutes);
                 FirebaseFirestore.instance.collection("students").doc(RaqiCubit.get(context).userModel!.uId).update({'minutes' : "$minEarning"});
-                showToast(text: "مبارك, تم شحن 120 دقيقة", state: ToastStates.SUCCESS);
+                showToast(text: "مبارك, تم شحن 100 دقيقة", state: ToastStates.SUCCESS);
+              }
+              if(transactionDetails["cartAmount"] == "575.00"){
+                minEarning = 500 + int.parse(RaqiCubit.get(context).userModel!.minutes);
+                FirebaseFirestore.instance.collection("students").doc(RaqiCubit.get(context).userModel!.uId).update({'minutes' : "$minEarning"});
+                showToast(text: "مبارك, تم شحن 500 دقيقة", state: ToastStates.SUCCESS);
+              }
+              if(transactionDetails["cartAmount"] == "1150.00"){
+                FirebaseFirestore.instance.collection("students").doc(RaqiCubit.get(context).userModel!.uId).update({'minutes' : "10000"});
+                showToast(text: "مبارك, تم شحن الباقة المفتوحة", state: ToastStates.SUCCESS);
               }
               FirebaseFirestore.instance.collection("payments").add({
                 'amount': transactionDetails["cartAmount"],
@@ -133,9 +142,5 @@ class PaymentViewModel {
 
     });
   }
-
-
-
-
 
 }

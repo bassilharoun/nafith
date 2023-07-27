@@ -343,7 +343,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       });
                     },
                   ),
-                  if(Platform.isIOS)
+                  // if(Platform.isIOS)
                     PaymentOption(
                     height: 70,
                     index: 1,

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "854239875016",
+    "firebase_url": "https://raqi-ced36-default-rtdb.firebaseio.com",
     "project_id": "raqi-ced36",
     "storage_bucket": "raqi-ced36.appspot.com"
   },
@@ -50,6 +51,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "854239875016-917sb90mkbmf7astbfmg4ppk3fd3dftp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raqi.app",
+            "certificate_hash": "7fdd1c7226086d0dd398dcb5d22a1ece033c96fd"
+          }
+        },
+        {
+          "client_id": "854239875016-er3k7bee5o2ksg3hl3kgc4ngp1dufuc7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raqi.app",
+            "certificate_hash": "4c9b2e138242d61ed17d7a9ed66c1a55a697334b"
+          }
+        },
         {
           "client_id": "854239875016-jt9lgfsms5cjeq6edlc616t9bh6si9t9.apps.googleusercontent.com",
           "client_type": 3

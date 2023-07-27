@@ -77,7 +77,7 @@ class PayTabsService {
         amount: payTabsPaymentRequest.amount,
         currencyCode: payTabsPaymentRequest.currency,
         merchantCountryCode: payTabsPaymentRequest.countryCode,
-        merchantApplePayIndentifier: "com.raqi.app",
+        merchantApplePayIndentifier: "merchant.raqi.app",
         linkBillingNameWithCardHolderName: true
     );
     configuration.simplifyApplePayValidation = true;
