@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart' as datetime;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
@@ -499,7 +499,7 @@ class BlurryDialogState3 extends State<BlurryCal> {
                       Text(from,style: TextStyle(color: buttonsColor)),
                       Spacer(),
                       IconButton(onPressed: (){
-                        DatePicker.showDateTimePicker(
+                        datetime.DatePicker.showDateTimePicker(
                             context,
                             minTime: DateTime.now().add(Duration(hours: 1)),
                             maxTime: DateTime.now().add(Duration(days: 7))
@@ -520,7 +520,7 @@ class BlurryDialogState3 extends State<BlurryCal> {
                       Text(to,style: TextStyle(color: buttonsColor)),
                       Spacer(),
                       IconButton(onPressed: (){
-                        DatePicker.showDateTimePicker(
+                        datetime.DatePicker.showDateTimePicker(
                             context,
                             minTime: RaqiCubit.get(context).from.add(Duration(minutes: 30)),
                             maxTime: RaqiCubit.get(context).from.add(Duration(hours: 6))

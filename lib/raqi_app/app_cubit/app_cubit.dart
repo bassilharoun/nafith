@@ -731,7 +731,7 @@ class RaqiCubit extends Cubit<RaqiStates>{
   var picker = ImagePicker() ;
 
   Future<void> getProfileImage()async{
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     if(pickedFile != null){
       profileImage = File(pickedFile.path);
