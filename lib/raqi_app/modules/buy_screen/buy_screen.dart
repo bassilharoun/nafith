@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/modules/payment/cubit/cubit.dart';
-import 'package:raqi/raqi_app/modules/payment/cubit/states.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/modules/payment/cubit/cubit.dart';
+import 'package:nafith/raqi_app/modules/payment/cubit/states.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+
+import '../../shared/colors.dart';
 
 class BuyScreen extends StatelessWidget {
   var couponController = TextEditingController();

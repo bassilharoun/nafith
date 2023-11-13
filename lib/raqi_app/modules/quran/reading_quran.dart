@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nafith/raqi_app/models/surah_model.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
 import 'package:quran/quran.dart' as quran;
-import 'package:raqi/raqi_app/models/surah_model.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
 
 class SurahPage extends StatelessWidget {
   final Surah surah;

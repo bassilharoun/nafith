@@ -2,14 +2,14 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nafith/raqi_app/models/surah_model.dart';
+import 'package:nafith/raqi_app/modules/quran/onlineQuran.dart';
+import 'package:nafith/raqi_app/modules/quran/reading_quran.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
 import 'package:quran/quran.dart' as quran;
 import 'package:google_fonts/google_fonts.dart';
-import 'package:raqi/raqi_app/models/surah_model.dart';
-import 'package:raqi/raqi_app/modules/quran/onlineQuran.dart';
-import 'package:raqi/raqi_app/modules/quran/reading_quran.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
 
 class QuranScreen extends StatefulWidget {
   @override

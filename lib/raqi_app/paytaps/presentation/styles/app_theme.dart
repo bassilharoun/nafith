@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/paytaps/presentation/styles/app_colors.dart';
+import 'package:nafith/raqi_app/paytaps/presentation/styles/app_colors.dart';
 
 ThemeData getApplicationLightTheme() {
   return ThemeData(

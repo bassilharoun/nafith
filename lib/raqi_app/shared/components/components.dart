@@ -6,14 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart' as datetime;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/layout/raqi_layout.dart';
-import 'package:raqi/raqi_app/models/comment_model.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
-import 'package:raqi/raqi_app/styles/Iconly-Broken_icons.dart';
-
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/layout/raqi_layout.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/styles/Iconly-Broken_icons.dart';
 
 void navigateTo(context , widget) => Navigator.push(context,
     MaterialPageRoute(builder:  (context) => widget)) ;

@@ -5,9 +5,8 @@ import 'package:flutter_paytabs_bridge/IOSThemeConfiguration.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkConfigurationDetails.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkLocale.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkTokeniseType.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/raqi_user_model.dart';
-import 'package:raqi/raqi_app/paytaps/presentation/resources/asset_images.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/paytaps/presentation/resources/asset_images.dart';
 
 import '../network/requests/paytabs_payment_request.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/modules/login/login_screen.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/network/local/cache_helper.dart';
+import 'package:nafith/raqi_app/modules/login/login_screen.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/network/local/cache_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BoardingModel{

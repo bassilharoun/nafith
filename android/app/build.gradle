@@ -56,7 +56,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.raqi.app"
+        applicationId "com.nafith.app"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         multiDexEnabled true

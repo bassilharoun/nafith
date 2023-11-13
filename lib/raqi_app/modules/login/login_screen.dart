@@ -3,17 +3,17 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/layout/raqi_layout.dart';
-import 'package:raqi/raqi_app/modules/login/cubit/cubit.dart';
-import 'package:raqi/raqi_app/modules/login/cubit/states.dart';
-import 'package:raqi/raqi_app/modules/otp/otp_login_screen.dart';
-import 'package:raqi/raqi_app/modules/signup/sign_up.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
-import 'package:raqi/raqi_app/shared/network/local/cache_helper.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/layout/raqi_layout.dart';
+import 'package:nafith/raqi_app/modules/login/cubit/cubit.dart';
+import 'package:nafith/raqi_app/modules/login/cubit/states.dart';
+import 'package:nafith/raqi_app/modules/otp/otp_login_screen.dart';
+import 'package:nafith/raqi_app/modules/signup/sign_up.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/shared/network/local/cache_helper.dart';
 
 class LoginScreen extends StatelessWidget {
   String? country ;

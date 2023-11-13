@@ -51,20 +51,22 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCJFYCkgk51lLTza1zL-ikGc--aMmVVcz8',
-    appId: '1:854239875016:android:82618527690766d03e7afd',
+    appId: '1:854239875016:android:16b4c053528dfe0c3e7afd',
     messagingSenderId: '854239875016',
     projectId: 'raqi-ced36',
+    databaseURL: 'https://raqi-ced36-default-rtdb.firebaseio.com',
     storageBucket: 'raqi-ced36.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyD1OM-2UQ4sPKkPNIA1frGI85mYYq-JudE',
-    appId: '1:854239875016:ios:304d6d1f7c4ad0bb3e7afd',
+    appId: '1:854239875016:ios:e1f95a656d9770033e7afd',
     messagingSenderId: '854239875016',
     projectId: 'raqi-ced36',
+    databaseURL: 'https://raqi-ced36-default-rtdb.firebaseio.com',
     storageBucket: 'raqi-ced36.appspot.com',
     androidClientId: '854239875016-234grissphhi7fu7pvc86tkb1p1ekd45.apps.googleusercontent.com',
-    iosClientId: '854239875016-blk370in5h05u8miam2f8r021nerv1nh.apps.googleusercontent.com',
-    iosBundleId: 'com.raqi.app',
+    iosClientId: '854239875016-sk5rf9sdmj1172m6iatpqufdkflv4pbs.apps.googleusercontent.com',
+    iosBundleId: 'com.nafith.app',
   );
 }

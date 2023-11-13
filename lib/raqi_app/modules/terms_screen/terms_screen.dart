@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
 
 class TermsScreen extends StatefulWidget {
   const TermsScreen({Key? key}) : super(key: key);

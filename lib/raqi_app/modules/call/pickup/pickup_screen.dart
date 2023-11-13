@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/call_model.dart';
-import 'package:raqi/raqi_app/modules/call/video/video_call.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/models/call_model.dart';
+import 'package:nafith/raqi_app/modules/call/video/video_call.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
 
 class PickupScreen extends StatelessWidget {
   final Call call ;

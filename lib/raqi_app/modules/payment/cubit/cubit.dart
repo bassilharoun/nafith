@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/first_token.dart';
-import 'package:raqi/raqi_app/modules/payment/cubit/states.dart';
-import 'package:raqi/raqi_app/modules/payment/visacard.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
-import 'package:raqi/raqi_app/shared/network/dio.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/models/first_token.dart';
+import 'package:nafith/raqi_app/modules/payment/cubit/states.dart';
+import 'package:nafith/raqi_app/modules/payment/visacard.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/shared/network/dio.dart';
 
 class PaymentCubit extends Cubit<PaymobStates>{
   PaymentCubit() : super(PaymobInitState());

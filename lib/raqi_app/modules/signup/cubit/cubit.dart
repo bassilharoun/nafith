@@ -6,10 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:raqi/raqi_app/models/raqi_user_model.dart';
-import 'package:raqi/raqi_app/modules/signup/cubit/states.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/models/raqi_user_model.dart';
+import 'package:nafith/raqi_app/modules/signup/cubit/states.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
 
 class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
   RaqiSignupCubit() : super(RaqiSignupInitialState());

@@ -1,7 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/modules/signup/sign_up.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
 
 class Firebase_Messaging extends StatefulWidget {
 

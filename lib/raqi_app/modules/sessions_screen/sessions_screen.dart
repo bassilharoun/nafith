@@ -1,11 +1,11 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/sessions_model.dart';
-import 'package:raqi/raqi_app/modules/teacher_profile/teacher_profile.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/models/sessions_model.dart';
+import 'package:nafith/raqi_app/modules/teacher_profile/teacher_profile.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/applocale.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
 
 class SessionsScreen extends StatelessWidget {
 

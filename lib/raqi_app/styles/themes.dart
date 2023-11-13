@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/shared/colors.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/shared/colors.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
 
 
 ThemeData darkTheme = ThemeData(

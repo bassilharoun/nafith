@@ -1,11 +1,9 @@
 import 'package:agora_uikit/agora_uikit.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/call_model.dart';
-import 'package:raqi/raqi_app/modules/call/agora_config.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/models/call_model.dart';
+import 'package:nafith/raqi_app/modules/call/agora_config.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
 
 class CallPage extends StatefulWidget {
   final String channelId;

@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:raqi/raqi_app/modules/login/cubit/states.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/components/constants.dart';
+import 'package:nafith/raqi_app/modules/login/cubit/states.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/components/constants.dart';
 
 var cre;
 class RaqiLoginCubit extends Cubit<RaqiLoginStates>{

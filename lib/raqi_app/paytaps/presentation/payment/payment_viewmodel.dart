@@ -3,12 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_paytabs_bridge/flutter_paytabs_bridge.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/paytaps/domain/ext.dart';
-import 'package:raqi/raqi_app/paytaps/domain/network/requests/paytabs_payment_request.dart';
-import 'package:raqi/raqi_app/paytaps/domain/services/paytabs_service.dart';
-import 'package:raqi/raqi_app/paytaps/presentation/payment/payment_states.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/paytaps/domain/network/requests/paytabs_payment_request.dart';
+import 'package:nafith/raqi_app/paytaps/domain/services/paytabs_service.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
 
 class PaymentViewModel {
   PayTabsService _payTabsService = PayTabsService();

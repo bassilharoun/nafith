@@ -1,12 +1,11 @@
 import 'dart:ui';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/models/raqi_user_model.dart';
-import 'package:raqi/raqi_app/modules/login/login_screen.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/network/local/cache_helper.dart';
+import 'package:nafith/raqi_app/app_cubit/app_cubit.dart';
+import 'package:nafith/raqi_app/models/raqi_user_model.dart';
+import 'package:nafith/raqi_app/modules/login/login_screen.dart';
+import 'package:nafith/raqi_app/shared/components/components.dart';
+import 'package:nafith/raqi_app/shared/network/local/cache_helper.dart';
 
 void signOut(context){
   CacheHelper.removeData(key: 'uId').then((value) {

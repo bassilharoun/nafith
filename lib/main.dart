@@ -6,23 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:raqi/firebase_options.dart';
-import 'package:raqi/raqi_app/app_cubit/app_cubit.dart';
-import 'package:raqi/raqi_app/app_cubit/app_states.dart';
-import 'package:raqi/raqi_app/layout/raqi_layout.dart';
-import 'package:raqi/raqi_app/modules/chat/chat_details_screen.dart';
-import 'package:raqi/raqi_app/modules/on_boarding/on_boarding_screen.dart';
-import 'package:raqi/raqi_app/modules/payment/cubit/cubit.dart';
-import 'package:raqi/raqi_app/modules/signup/sign_up.dart';
-import 'package:raqi/raqi_app/shared/bloc_observer.dart';
-import 'package:raqi/raqi_app/shared/components/applocale.dart';
-import 'package:raqi/raqi_app/shared/components/components.dart';
-import 'package:raqi/raqi_app/shared/network/dio.dart';
-import 'package:raqi/raqi_app/shared/network/firebase_messaging.dart';
-import 'package:raqi/raqi_app/shared/network/notification_service.dart';
-import 'package:raqi/raqi_app/styles/themes.dart';
+import 'package:nafith/firebase_options.dart';
+import 'package:nafith/raqi_app/shared/bloc_observer.dart';
+import 'package:nafith/raqi_app/shared/network/dio.dart';
+import 'raqi_app/app_cubit/app_cubit.dart';
+import 'raqi_app/app_cubit/app_states.dart';
+import 'raqi_app/layout/raqi_layout.dart';
+import 'raqi_app/modules/on_boarding/on_boarding_screen.dart';
+import 'raqi_app/modules/payment/cubit/cubit.dart';
+import 'raqi_app/shared/components/applocale.dart';
 import 'raqi_app/shared/components/constants.dart';
 import 'raqi_app/shared/network/local/cache_helper.dart';
+import 'raqi_app/shared/network/notification_service.dart';
+import 'raqi_app/styles/themes.dart';
 
 
   // when app is in background
