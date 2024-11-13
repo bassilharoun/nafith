@@ -122,13 +122,13 @@ buildFollowerItem(context, UserModel? model){
                 Row(
                   children: [
                     Flexible(child: Text("${getLang(context,"name")}: ",overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
-                    Flexible(child: Text(model.name,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
+                    Flexible(child: Text(model.name,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
                   ],
                 ),
                 Row(
                   children: [
                     Flexible(child: Text("${getLang(context,"phone")}: ",overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
-                    Flexible(child: Text(model.phone,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
+                    Flexible(child: Text(model.phone,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),overflow: TextOverflow.ellipsis,softWrap: false,maxLines: 1,)),
                   ],
                 ),
               ],

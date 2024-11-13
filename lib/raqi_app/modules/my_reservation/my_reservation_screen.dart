@@ -102,13 +102,13 @@ class MyReservationScreen extends StatelessWidget {
               if(RaqiCubit.get(context).userModel!.type == "student")...[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("${getLang(context,"reservedWith")} ${model.teacherName}: ",style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
+                  child: Text("${getLang(context,"reservedWith")} ${model.teacherName}: ",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
                 ),
               ],
               if(RaqiCubit.get(context).userModel!.type == "teacher")...[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("${model.studentName} ${getLang(context,"reservedThis")}",style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
+                  child: Text("${model.studentName} ${getLang(context,"reservedThis")}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
                 ),
               ],
               ClipRRect(
@@ -134,19 +134,19 @@ class MyReservationScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text("${getLang(context,"duration")}"),
-                                    Text("${model.duration} Min",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),),
+                                    Text("${model.duration} Min",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),),
                                   ],
                                 ),
                                 Row(
                                   children: [
                                     Text("${getLang(context,"from")}"),
-                                    Text(model.from,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+                                    Text(model.from,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
                                   ],
                                 ),
                                 Row(
                                   children: [
                                     Text("${getLang(context,"to")}"),
-                                    Text(model.to,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+                                    Text(model.to,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
                                   ],
                                 ),
 

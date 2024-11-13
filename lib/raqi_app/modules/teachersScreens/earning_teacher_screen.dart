@@ -21,7 +21,7 @@ class EarningScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              Text("Total earning Mins : ",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 20),),
+              Text("Total earning Mins : ",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),),
               CircleAvatar(child: Text("${RaqiCubit.get(context).sumMinutes}",style: TextStyle(fontSize: 24, color: Colors.white),),backgroundColor: buttonsColor,),
             ],),
           ),
@@ -55,7 +55,7 @@ class EarningScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(model.dateTime,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+            child: Text(model.dateTime,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
           ),
           SizedBox(height: 5,),
           ClipRRect(
@@ -85,11 +85,11 @@ class EarningScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Text("${getLang(context,"vSessions")}",style: TextStyle(fontSize: 16),),
-                                  Text("${model.studentName}",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),),
+                                  Text("${model.studentName}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),),
                                 ],
                               ),
                               Spacer(),
-                              Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),),
+                              Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),),
                             ],
                           ),
                         ),

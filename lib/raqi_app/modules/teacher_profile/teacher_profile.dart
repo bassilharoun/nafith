@@ -87,7 +87,7 @@ class TeacherProfile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(model.name,
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontSize: 24
                       ),
                     ),
@@ -201,7 +201,7 @@ Widget buildCommentItem(context ,CommentModel model){
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(model.senderName,style: TextStyle(fontSize: 16),),
-                  Text(model.dateTime,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 10),)
+                  Text(model.dateTime,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 10),)
                 ],
               ),
               Spacer(),

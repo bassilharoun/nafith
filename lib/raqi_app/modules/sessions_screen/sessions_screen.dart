@@ -67,7 +67,7 @@ class SessionsScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(model.dateTime,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+                child: Text(model.dateTime,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
               ),
               SizedBox(height: 5,),
               ClipRRect(
@@ -90,7 +90,7 @@ class SessionsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("${getLang(context,"vSessions")}",style: TextStyle(fontSize: 16),),
-                                Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),),
+                                Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),),
                               ],
                             ),
                             SizedBox(width: 35,)

@@ -123,56 +123,61 @@ class RaqiSignupCubit extends Cubit<RaqiSignupStates>{
   }
 
   dynamic verificationCode ;
-  verifyPhone(
-      String phone,
-      String email,
-      String name,
-      String gender,
-      String type,
-      String bio,
-      String myCountryName,
-      String myCountryCode,
-      context,
-
-      )async{
+verifyPhone(
+  String phone,
+  String email,
+  String name,
+  String gender,
+  String type,
+  String bio,
+  String myCountryName,
+  String myCountryCode,
+  BuildContext context,
+) async {
+  try {
+    emit(RaqiVerfiyPhoneLoadingState());
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: phone,
-        verificationCompleted: (PhoneAuthCredential credential)async{
-        await FirebaseAuth.instance.signInWithCredential(credential)
-            .then((value) {
-          if(value.user != null){
-            print('Logged in Doooooooone');
-            print(verificationCode);
-            print(value.user!.uid);
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await FirebaseAuth.instance.signInWithCredential(credential).then((value) {
+          if (value.user != null) {
+            print('Logged in successfully');
             RaqiSignupCubit.get(context).userCreate(
-                email: email,
-                name: name,
-                phone: phone,
-                uId: value.user!.uid,
-                gender: gender,
-                type: type,
-                bio: bio,
-                myCountryName: myCountryName,
-                myCountryCode: myCountryCode
+              email: email,
+              name: name,
+              phone: phone,
+              uId: value.user!.uid,
+              gender: gender,
+              type: type,
+              bio: bio,
+              myCountryName: myCountryName,
+              myCountryCode: myCountryCode,
             );
-            uId = value.user!.uid;
-            RaqiSignupCubit.get(context).signupSuccess();
+            emit(RaqiVerfiyPhoneSuccessState());
           }
+        }).catchError((error) {
+          emit(RaqiVerificationErrorState(error.toString()));
+          print('Error during sign-in with credential: $error');
         });
-        emit(RaqiVerfiyPhoneSuccessState());
-        },
-        verificationFailed: (FirebaseAuthException e){
-          print(e.message);
-        },
-        codeSent: (String verificationID , int? resendToken){
-          verificationCode = verificationID ;
-        },
-        codeAutoRetrievalTimeout: (String verificationID){
-          verificationCode = verificationID ;
-        },
-      timeout: Duration(seconds: 90)
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        print('Verification failed: ${e.message}');
+        emit(RaqiVerificationErrorState(e.message ?? 'Verification failed'));
+      },
+      codeSent: (String verificationID, int? resendToken) {
+        verificationCode = verificationID;
+        emit(RaqiCodeSentState());
+      },
+      codeAutoRetrievalTimeout: (String verificationID) {
+        verificationCode = verificationID;
+      },
+      timeout: const Duration(seconds: 60),
     );
+  } catch (e) {
+    print('An error occurred during phone verification: $e');
+    emit(RaqiVerificationErrorState(e.toString()));
   }
+}
 
   final googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _user ;

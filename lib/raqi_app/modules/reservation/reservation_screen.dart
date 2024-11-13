@@ -106,7 +106,7 @@ class ReservationScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("${model.studentName} ${getLang(context,"reservedThis")}",style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
+                child: Text("${model.studentName} ${getLang(context,"reservedThis")}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold,fontSize: 14)),
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -131,19 +131,19 @@ class ReservationScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text("${getLang(context,"duration")}"),
-                                    Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),),
+                                    Text("${model.duration} ${getLang(context,"min")}",style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),),
                                   ],
                                 ),
                                 Row(
                                   children: [
                                     Text("${model.duration} ${getLang(context,"from")}"),
-                                    Text(model.from,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+                                    Text(model.from,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
                                   ],
                                 ),
                                 Row(
                                   children: [
                                     Text("${model.duration} ${getLang(context,"to")}"),
-                                    Text(model.to,style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 12),),
+                                    Text(model.to,style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 12),),
                                   ],
                                 ),
 

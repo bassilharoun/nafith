@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nafith/firebase_options.dart';
 import 'package:nafith/raqi_app/shared/bloc_observer.dart';
 import 'package:nafith/raqi_app/shared/network/dio.dart';
@@ -111,12 +112,14 @@ class MyApp extends StatelessWidget{
       child: BlocConsumer<RaqiCubit , RaqiStates>(
         listener: (context , state){},
         builder: (context , state){
-          return MaterialApp(
+          return ScreenUtilInit(
+            builder: (_, child){
+              return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode: ThemeMode.light ,
-            home: startWidget,
+            home: child,
             localizationsDelegates: const[
               AppLocale.delegate,
               GlobalMaterialLocalizations.delegate ,
@@ -141,6 +144,12 @@ class MyApp extends StatelessWidget{
               }
               return supportLang.first ;
             },
+          );
+        
+            },
+            child: startWidget,
+            
+            
           );
         },
       ),

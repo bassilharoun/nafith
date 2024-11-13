@@ -24,6 +24,15 @@ class RaqiChangeCountrySuccessState extends RaqiSignupStates {}
 
 class RaqiVerfiyPhoneSuccessState extends RaqiSignupStates {}
 
+class RaqiVerfiyPhoneLoadingState extends RaqiSignupStates {}
+
+class RaqiVerificationErrorState extends RaqiSignupStates {
+  final String error ;
+  RaqiVerificationErrorState(this.error);
+}
+
+class RaqiCodeSentState extends RaqiSignupStates {}
+
 class RaqiGoogleLoginSuccessState extends RaqiSignupStates {}
 
 class RaqiChangeDropdown extends RaqiSignupStates {}

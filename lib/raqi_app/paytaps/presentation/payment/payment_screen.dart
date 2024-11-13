@@ -14,7 +14,6 @@ import '../resources/asset_images.dart';
 import 'dart:io' show Platform;
 
 class PaymentScreen extends StatefulWidget {
-
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
 }
@@ -22,8 +21,8 @@ class PaymentScreen extends StatefulWidget {
 class _PaymentScreenState extends State<PaymentScreen> {
   final PaymentViewModel _viewModel = PaymentViewModel();
   var flag = 0;
-  int pakka = 3 ;
-  double amount = 115 ;
+  int pakka = 3;
+  double amount = 115;
   var couponController = TextEditingController();
 
   @override
@@ -31,11 +30,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return BlocProvider(
       create: (context) => PaymentCubit(),
       child: BlocConsumer<PaymentCubit, PaymobStates>(
-        listener: (context, state){},
-        builder: (context, state){
+        listener: (context, state) {},
+        builder: (context, state) {
           return Scaffold(
             backgroundColor: AppColors.white,
-            floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerFloat,
             floatingActionButton: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
@@ -45,12 +45,28 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         print(flag);
-                        if(flag == 0){
-                          _viewModel.startCardPayment(PaymentCubit.get(context).dis == 0 ? amount : amount - (amount*(PaymentCubit.get(context).dis/100)), RaqiCubit.get(context).userModel!.uId,context);
+                        if (flag == 0) {
+                          _viewModel.startCardPayment(
+                              PaymentCubit.get(context).dis == 0
+                                  ? amount
+                                  : amount -
+                                      (amount *
+                                          (PaymentCubit.get(context).dis /
+                                              100)),
+                              RaqiCubit.get(context).userModel!.uId,
+                              context);
                         }
-                        if(flag == 1){
+                        if (flag == 1) {
                           print("apple pay");
-                          _viewModel.startApplePayment(PaymentCubit.get(context).dis == 0 ? amount : amount - (amount*(PaymentCubit.get(context).dis/100)), RaqiCubit.get(context).userModel!.uId,context);
+                          _viewModel.startApplePayment(
+                              PaymentCubit.get(context).dis == 0
+                                  ? amount
+                                  : amount -
+                                      (amount *
+                                          (PaymentCubit.get(context).dis /
+                                              100)),
+                              RaqiCubit.get(context).userModel!.uId,
+                              context);
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -59,7 +75,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             borderRadius: BorderRadius.circular(10)),
                       ),
                       child: Text(
-                        "${getLang(context,"continue")}",
+                        "${getLang(context, "continue")}",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -75,261 +91,385 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:  [
+                      children: [
                         Row(
                           children: [
-                            Text("${getLang(context,"hello")}" ,style: TextStyle(fontSize: 24),),
+                            Text(
+                              "${getLang(context, "hello")}",
+                              style: TextStyle(fontSize: 24),
+                            ),
                             Spacer(),
                             Row(
                               children: [
-                                Icon(Icons.timer,color: buttonsColor),
-                                SizedBox(width: 5,),
-                                Text("${RaqiCubit.get(context).userModel!.minutes}",style: TextStyle(fontSize: 20),),
-                                Text("${getLang(context,"min")}",style: TextStyle(fontSize: 20 , color: Colors.grey),)
+                                Icon(Icons.timer, color: buttonsColor),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "${RaqiCubit.get(context).userModel!.minutes}",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                Text(
+                                  "${getLang(context, "min")}",
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.grey),
+                                )
                               ],
                             )
                           ],
                         ),
-                        Text("${RaqiCubit.get(context).userModel!.name}," ,style: TextStyle(fontSize: 24),),
-                        SizedBox(height: 30,),
+                        Text(
+                          "${RaqiCubit.get(context).userModel!.name},",
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           children: [
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    pakka = 1 ;
-                                    amount = 23 ;
+                                    pakka = 1;
+                                    amount = 23;
                                     print(pakka);
                                   });
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        if(pakka == 1)
-                                          BoxShadow(color: Colors.grey,blurRadius: 20)
-                                      ]
-                                  ),
+                                  decoration: BoxDecoration(boxShadow: [
+                                    if (pakka == 1)
+                                      BoxShadow(
+                                          color: Colors.grey, blurRadius: 20)
+                                  ]),
                                   height: pakka == 1 ? 125 : 110,
                                   child: Card(
-                                    color: pakka == 1 ? buttonsColor : Colors.grey,
+                                    color:
+                                        pakka == 1 ? buttonsColor : Colors.grey,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Image.asset('assets/images/bronze.png',width: 50,height: 50,),
+                                          Image.asset(
+                                            'assets/images/bronze.png',
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              PaymentCubit.get(context).dis == 0 ? Text("23 ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )) : Text("${23 - (23*(PaymentCubit.get(context).dis/100))} ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )),
-                                              Text("20 ${getLang(context,"min")}",style: TextStyle(color: Colors.white, fontSize: 10 ))
+                                              PaymentCubit.get(context).dis == 0
+                                                  ? Text(
+                                                      "23 ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10))
+                                                  : Text(
+                                                      "${23 - (23 * (PaymentCubit.get(context).dis / 100))} ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10)),
+                                              Text(
+                                                  "20 ${getLang(context, "min")}",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10))
                                             ],
                                           ),
                                         ],
                                       ),
                                     ),
-
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    pakka = 2 ;
-                                    amount = 57.5 ;
+                                    pakka = 2;
+                                    amount = 57.5;
                                   });
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        if(pakka == 2)
-                                          BoxShadow(color: Colors.grey,blurRadius: 20)
-                                      ]
-                                  ),
+                                  decoration: BoxDecoration(boxShadow: [
+                                    if (pakka == 2)
+                                      BoxShadow(
+                                          color: Colors.grey, blurRadius: 20)
+                                  ]),
                                   height: pakka == 2 ? 125 : 110,
                                   child: Card(
-                                    color: pakka == 2 ? buttonsColor : Colors.grey,
+                                    color:
+                                        pakka == 2 ? buttonsColor : Colors.grey,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Image.asset('assets/images/fadda.png',width: 50,height: 50,),
+                                          Image.asset(
+                                            'assets/images/fadda.png',
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              PaymentCubit.get(context).dis == 0 ? Text("57.5 ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )) : Text("${57.5 - (57.5*(PaymentCubit.get(context).dis/100))} ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )),
-                                              Text("50 ${getLang(context,"min")}",style: TextStyle(color: Colors.white, fontSize: 10 ))
-
+                                              PaymentCubit.get(context).dis == 0
+                                                  ? Text(
+                                                      "57.5 ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10))
+                                                  : Text(
+                                                      "${57.5 - (57.5 * (PaymentCubit.get(context).dis / 100))} ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10)),
+                                              Text(
+                                                  "50 ${getLang(context, "min")}",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10))
                                             ],
                                           ),
                                         ],
                                       ),
                                     ),
-
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    pakka = 3 ;
-                                    amount = 115 ;
+                                    pakka = 3;
+                                    amount = 115;
                                   });
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        if(pakka == 3)
-                                          BoxShadow(color: Colors.grey,blurRadius: 20)
-                                      ]
-                                  ),
+                                  decoration: BoxDecoration(boxShadow: [
+                                    if (pakka == 3)
+                                      BoxShadow(
+                                          color: Colors.grey, blurRadius: 20)
+                                  ]),
                                   height: pakka == 3 ? 125 : 110,
                                   child: Card(
-                                    color: pakka == 3 ? buttonsColor : Colors.grey,
+                                    color:
+                                        pakka == 3 ? buttonsColor : Colors.grey,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Image.asset('assets/images/gold.png',width: 50,height: 50,),
+                                          Image.asset(
+                                            'assets/images/gold.png',
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              PaymentCubit.get(context).dis == 0 ? Text("115 ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )) : Text("${115 - (115*(PaymentCubit.get(context).dis/100))} ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )),
-                                              Text("100 ${getLang(context,"min")}",style: TextStyle(color: Colors.white, fontSize: 10 ))
-
+                                              PaymentCubit.get(context).dis == 0
+                                                  ? Text(
+                                                      "115 ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10))
+                                                  : Text(
+                                                      "${115 - (115 * (PaymentCubit.get(context).dis / 100))} ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10)),
+                                              Text(
+                                                  "100 ${getLang(context, "min")}",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10))
                                             ],
                                           ),
                                         ],
                                       ),
                                     ),
-
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    pakka = 4 ;
-                                    amount = 575 ;
+                                    pakka = 4;
+                                    amount = 575;
                                   });
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        if(pakka == 4)
-                                          BoxShadow(color: Colors.grey,blurRadius: 20)
-                                      ]
-                                  ),
+                                  decoration: BoxDecoration(boxShadow: [
+                                    if (pakka == 4)
+                                      BoxShadow(
+                                          color: Colors.grey, blurRadius: 20)
+                                  ]),
                                   height: pakka == 4 ? 125 : 110,
                                   child: Card(
-                                    color: pakka == 4 ? buttonsColor : Colors.grey,
+                                    color:
+                                        pakka == 4 ? buttonsColor : Colors.grey,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Image.asset('assets/images/diamond.png',width: 50,height: 50,),
+                                          Image.asset(
+                                            'assets/images/diamond.png',
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              PaymentCubit.get(context).dis == 0 ? Text("575 ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )) : Text("${575 - (575*(PaymentCubit.get(context).dis/100))} ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )),
-                                              Text("500 ${getLang(context,"min")}",style: TextStyle(color: Colors.white, fontSize: 10 ))
-
+                                              PaymentCubit.get(context).dis == 0
+                                                  ? Text(
+                                                      "575 ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10))
+                                                  : Text(
+                                                      "${575 - (575 * (PaymentCubit.get(context).dis / 100))} ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10)),
+                                              Text(
+                                                  "500 ${getLang(context, "min")}",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10))
                                             ],
                                           ),
                                         ],
                                       ),
                                     ),
-
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    pakka = 5 ;
-                                    amount = 1150 ;
+                                    pakka = 5;
+                                    amount = 1150;
                                   });
                                 },
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        if(pakka == 5)
-                                          BoxShadow(color: Colors.grey,blurRadius: 20)
-                                      ]
-                                  ),
+                                  decoration: BoxDecoration(boxShadow: [
+                                    if (pakka == 5)
+                                      BoxShadow(
+                                          color: Colors.grey, blurRadius: 20)
+                                  ]),
                                   height: pakka == 5 ? 125 : 110,
                                   child: Card(
-                                    color: pakka == 5 ? buttonsColor : Colors.grey,
+                                    color:
+                                        pakka == 5 ? buttonsColor : Colors.grey,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Image.asset('assets/images/open.png',width: 50,height: 50,),
+                                          Image.asset(
+                                            'assets/images/open.png',
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              PaymentCubit.get(context).dis == 0 ? Text("1150 ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )) : Text("${1150 - (1150*(PaymentCubit.get(context).dis/100))} ${getLang(context,"cost")}",style: TextStyle(color: Colors.white, fontSize: 12 )),
-                                              Text("${getLang(context,"open")}",style: TextStyle(color: Colors.white, fontSize: 10 ))
-
+                                              PaymentCubit.get(context).dis == 0
+                                                  ? Text(
+                                                      "1150 ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10))
+                                                  : Text(
+                                                      "${1150 - (1150 * (PaymentCubit.get(context).dis / 100))} ${getLang(context, "cost")}",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 10)),
+                                              Text(
+                                                  "${getLang(context, "open")}",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10))
                                             ],
                                           ),
                                         ],
                                       ),
                                     ),
-
                                   ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           children: [
                             Expanded(
                               child: defaultTxtForm(
                                   controller: couponController,
                                   type: TextInputType.text,
-                                  validate: (val){},
-                                  label: "${getLang(context,"coupon")}"
-                              ),
+                                  validate: (val) {},
+                                  label: "${getLang(context, "coupon")}"),
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             CircleAvatar(
                               radius: 25,
                               backgroundColor: Colors.green,
-                              child: IconButton(icon : Icon(CupertinoIcons.check_mark_circled), color: Colors.white, onPressed: () {
-                                PaymentCubit.get(context).getCoupon(couponController.text);
-                                couponController.text = "";
-                              },),
+                              child: IconButton(
+                                icon: Icon(CupertinoIcons.check_mark_circled),
+                                color: Colors.white,
+                                onPressed: () {
+                                  PaymentCubit.get(context)
+                                      .getCoupon(couponController.text);
+                                  couponController.text = "";
+                                },
+                              ),
                             )
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   PaymentOption(
                     height: 70,
                     index: 0,
@@ -343,13 +483,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     },
                   ),
                   // if(Platform.isIOS)
-                    PaymentOption(
+                  PaymentOption(
                     height: 70,
                     index: 1,
                     name: 'Apple Pay',
                     icon: SvgPicture.asset(
                       AssetImages.applePay,
-                      height:  50,
+                      height: 50,
                     ),
                     flag: flag,
                     onPress: () {
@@ -369,7 +509,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     flag: flag,
                     onPress: () {
                       setState(() {
-                        showToast(text: "سيتوفر قريبا", state: ToastStates.WARNING);
+                        showToast(
+                            text: "سيتوفر قريبا", state: ToastStates.WARNING);
                         flag = 2;
                       });
                     },
