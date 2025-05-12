@@ -1116,25 +1116,42 @@ class RaqiCubit extends Cubit<RaqiStates> {
 
   bool followerAvailable = false;
   UserModel? follower;
-  void getFollower(dynamic phone, context) {
+  Future<void> getFollower(dynamic phone, BuildContext context) async {
     emit(getFollowerLoadingState());
-    FirebaseFirestore.instance.collection('students').get().then((value) {
-      value.docs.forEach((element) {
-        if (element.data()['phone'] == phone) {
-          followerAvailable = true;
-          follower = UserModel.fromJson(element.data());
-        }
-      });
-    }).then((value) {
-      if (followerAvailable == true) {
-        FirebaseFirestore.instance
+
+    // Check if the phone number belongs to the current user
+    if (userModel?.phone == phone) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("لا يمكنك إضافة نفسك كتابع"),
+          duration: Duration(seconds: 3),
+        ),
+      );
+      emit(getFollowerErorrState());
+      return; // Exit early
+    }
+
+    await FirebaseFirestore.instance
+        .collection('students')
+        .where('phone', isEqualTo: phone) // Filter by phone number
+        .limit(1) // Limit results to 1 document
+        .get()
+        .then((snapshot) async {
+      if (snapshot.docs.isNotEmpty) {
+        // If a matching document is found
+        var element = snapshot.docs.first;
+        followerAvailable = true;
+        follower = UserModel.fromJson(element.data());
+
+        // Proceed with adding the follower document
+        await FirebaseFirestore.instance
             .collection('students')
             .doc(userModel!.uId)
             .collection('sons')
             .doc(follower!.uId)
             .set(follower!.toMap())
-            .then((value) {
-          FirebaseFirestore.instance
+            .then((value) async {
+          await FirebaseFirestore.instance
               .collection("students")
               .doc(follower!.uId)
               .update({'ejazat': '${userModel!.uId}'}).then((value) {
@@ -1147,13 +1164,18 @@ class RaqiCubit extends Cubit<RaqiStates> {
             follower = null;
             followerAvailable = false;
           });
-        }).catchError((error) {});
+        }).catchError((error) {
+          // Handle set operation error if needed
+          emit(getFollowerErorrState());
+        });
       } else {
+        // No document found
         showToast(text: "مستخدم غير متوفر!", state: ToastStates.ERROR);
         emit(getFollowerErorrState());
       }
-      print(followerAvailable);
-      print(follower);
+    }).catchError((error) {
+      // Handle query error if needed
+      emit(getFollowerErorrState());
     });
   }
 
